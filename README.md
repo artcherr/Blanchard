@@ -4,8 +4,6 @@
 
 A static landing page built per **design mockup** and **technical specification** with a focus on **mobile responsiveness**, **semantic HTML**, **cross‑browser support**, and **pixel‑perfect** layout.
 
-> Built according to the course technical brief (RU): see the *Blanchard — artistic gallery* requirements. fileciteturn1file0
-
 ## ✨ Features
 
 - **Responsive layout** (desktop → tablet → mobile), pixel‑perfect (±1–3px)
@@ -61,7 +59,7 @@ A static landing page built per **design mockup** and **technical specification*
   - Informative `alt` text on images
   - Keyboard‑focusable controls with clear focus styles
   - ARIA labels where appropriate
-- **BEM‑style class naming** and minimized media query set, per spec. fileciteturn1file0
+- **BEM‑style class naming** and minimized media query set, per spec.
 
 ## 🚀 Run Locally
 
@@ -91,10 +89,10 @@ Any static hosting works:
 
 ## ✅ Cross‑Browser & QA Checklist
 
-- Tested on latest Chrome/Firefox/Safari/Edge/Opera (per brief) fileciteturn1file0
+- Tested on latest Chrome/Firefox/Safari/Edge/Opera (per brief)
 - Validate HTML with W3C Validator
 - Check portrait/landscape on mobile/tablet
-- Ensure hover vs. `:active` behavior on touch devices (per brief) fileciteturn1file0
+- Ensure hover vs. `:active` behavior on touch devices (per brief) 
 - Lighthouse pass (Performance/A11y/Best Practices/SEO)
 
 ## 🗺 Roadmap / Ideas
@@ -104,6 +102,6 @@ Any static hosting works:
 - [ ] Respect `prefers-reduced-motion` for transitions
 - [ ] Add tests for anchor scrolling and section visibility
 
-## 🖋 License
+
 
 
