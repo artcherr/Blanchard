@@ -1,0 +1,889 @@
+@import url('./font_face.css');
+
+:root {
+  --header-and-footer-color: #000;
+  --text-and-title-color: #333;
+  --small-text-color: #999;
+  --border-color: #D1A9F0;
+  --static-and-hover-color: #9D5CD0;
+  --focus-color: #C283F3;
+  --active-color: #7943A4;
+  --whatsup-color: #30BF39;
+  --telegram-color: #26A5E4;
+  --error-color: #D11616;
+  --form-and-svg-color: #CACACA;
+  --base-color: #ECECEC;
+  --bg-color: #FFFFFF;
+  --cursor: pointer;
+  --flex: flex;
+  --column: column;
+  --row: row;
+  --pading: 49px;
+  --title-size-h3: 48px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*a::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: var(--cursor);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 160px;
+}
+
+body {
+  min-width: 320px;
+  font-family: "Open Sans", sans-serif;
+  margin: auto 0;
+}
+
+
+input {
+  box-sizing: border-box;
+  cursor: var(--cursor);
+}
+
+.list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: var(--cursor);
+}
+
+.descr {
+  margin: 0;
+}
+
+.title {
+  margin: 0;
+}
+
+/*  Добавляем стили для :hover только на десктопах  */
+
+@media (min-width: 768px) {
+  .nav__link:hover {
+    color: var(--focus-color);
+  }
+
+  .search:hover rect {
+    fill: var(--focus-color);
+  }
+
+  .search:hover path {
+    fill: var(--focus-color);
+  }
+
+  .hero__btn:hover {
+    border: 3px solid var(--border-color);
+  }
+
+  .checkbox input.standart-checkbox:hover+.checkbox__text::before {
+    border: var(--focus-color) 1px solid;
+  }
+
+  .checkbox__text:hover {
+    color: var(--focus-color);
+  }
+
+  .article__link:hover {
+    color: var(--active-color);
+  }
+
+  .article__link:hover::after {
+    background-color: var(--active-color);
+  }
+
+  .name:hover {
+    background-color: var(--small-text-color);
+  }
+
+  .tel:hover {
+    background-color: var(--small-text-color);
+  }
+
+  .form__submit-btn:hover {
+    border: 3px solid var(--border-color);
+    color: var(--base-color);
+    background-color: var(--static-and-hover-color);
+  }
+
+  .whatsapp path:hover {
+    opacity: 0.4;
+  }
+
+  .telegram path:hover {
+    opacity: 0.4;
+  }
+
+  .vk .vk__svg:hover {
+    fill: var(--bg-color);
+  }
+
+  .ok .ok__svg:hover {
+    fill: var(--bg-color);
+  }
+
+}
+
+
+
+/* header */
+
+.header {
+  background-color: var(--header-and-footer-color);
+}
+
+.header__content {
+  display: var(--flex);
+  align-items: center;
+  flex-direction: var(--row);
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* navigation */
+
+.nav {
+  width: 65%;
+  display: var(--flex);
+  flex-direction: var(--row);
+  justify-content: space-between;
+}
+
+.nav__list {
+  flex-wrap: wrap;
+  display: var(--flex);
+  width: 100%;
+  justify-content: space-between;
+}
+
+.nav__item:last-child {
+  padding-right: 118px;
+}
+
+.nav__link {
+  font-weight: 600;
+  outline: none;
+  color: var(--bg-color);
+  font-size: 18px;
+}
+
+.nav-list__found-link {
+  outline: none;
+}
+
+/* состояния для навигации */
+
+.nav__link:focus {
+  outline: none;
+  background-color: var(--active-color);
+  padding: 4px 4px;
+}
+
+.nav__link:active {
+  color: var(--active-color);
+}
+
+.search {
+  outline: none;
+}
+
+/* состояния для кнопки поиска  */
+
+.search:active rect {
+  fill: var(--static-and-hover-color);
+}
+
+.search:active path {
+  fill: var(--static-and-hover-color);
+}
+
+.search:focus {
+  background-color: var(--active-color);
+  border: none;
+}
+
+/* button in header */
+
+.search {
+  padding-top: 5px;
+}
+
+/* hero */
+
+.hero {
+  width: 100%;
+  padding: 146px 0;
+  background-image: url("../img/bg-hero-1920.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 -99px;
+  background-size: cover;
+  margin-bottom: 85px;
+}
+
+.hero__title {
+  margin-bottom: 20px;
+  color: var(--bg-color);
+  font-size: 72px;
+  line-height: 68px;
+  width: 65%;
+}
+
+.hero__descr {
+  font-weight: 700;
+  letter-spacing: -0.21px;
+  width: 34%;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--bg-color);
+  margin-bottom: 92px;
+}
+
+/* button for hero */
+
+
+.hero__btn {
+  display: inline-block;
+  border-radius: 34px;
+  padding-top: 21px;
+  padding-right: 33px;
+  padding-bottom: 21px;
+  padding-left: 32px;
+  border: 3px solid transparent;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bg-color);
+  background-color: var(--static-and-hover-color);
+  transition: border-color 0.1s ease;
+  outline: none;
+}
+
+.hero__btn:focus {
+  outline-offset: 3px;
+  outline: 2px double var(--border-color);
+}
+
+.hero__btn:active {
+  border: 3px solid var(--border-color);
+  background-color: var(--active-color);
+}
+
+/* about us */
+
+.about {
+  margin-bottom: 70px;
+}
+
+.about__title {
+  font-size: var(--title-size-h3);
+  color: var(--text-and-title-color);
+  margin-bottom: 22px;
+  font-weight: 400;
+}
+
+.about__descr {
+  font-weight: 400;
+  width: 67%;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--text-and-title-color);
+}
+
+/* gallery */
+
+.gallery {
+  padding: 80px 0;
+  background-image: url("../img/gallery-bg-1920.jpg");
+  background-size: cover;
+  margin-bottom: 86px;
+}
+
+.gallery__title {
+  line-height: 67px;
+  color: var(--bg-color);
+  font-size: 48px;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.gallery__content {
+  display: var(--flex);
+  justify-content: space-between;
+}
+
+.gallery__checkboxs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 20px;
+  min-height: 435px;
+  max-width: 190px;
+}
+
+/* стили для ролительского контейнера с чекбоксами */
+
+.checkboxs {
+  justify-content: flex-end;
+  display: var(--flex);
+  flex-direction: var(--column);
+}
+
+/* ----------------------------------------------------------------------------------------checkbox */
+.checkbox {
+  display: var(--flex);
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox__text {
+  color: var(--bg-color);
+  font-size: 16px;
+  line-height: 32px;
+}
+
+.checkbox .checkbox__text {
+  display: var(--flex);
+  align-items: center;
+  position: relative;
+  cursor: var(--cursor);
+}
+
+.standart-checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  appearance: none;
+}
+
+.checkbox .checkbox__text::before {
+  content: '';
+  display: block;
+  position: relative;
+  left: 0;
+  top: 1px;
+  width: 11px;
+  height: 11px;
+  border: var(--base-color) 1px solid;
+  margin-right: 11px;
+}
+
+.checkbox .checkbox__text::after {
+  content: '';
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 34%;
+  width: 12px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg width='4' height='5' viewBox='0 0 4 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle id='Ellipse 16' cx='2' cy='2.43433' r='2' fill='%23C283F3'/%3E%3C/svg%3E%0A");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.checkbox input.standart-checkbox:checked+.checkbox__text::after {
+  display: block;
+}
+
+/* -----------------------------------------------------------------------состояния для чекбокса */
+
+.checkbox input.standart-checkbox:focus+.checkbox__text::before {
+  border: var(--focus-color) 1px solid;
+}
+
+.checkbox input.standart-checkbox:active+.checkbox__text::before {
+  display: block;
+}
+
+/* ----------------------------------------------------------------------состояния для текста чекбокса в теге span с классом checkbox__text */
+
+.checkbox__text:focus {
+  color: var(--focus-color);
+}
+
+.checkbox__text:active {
+  color: var(--focus-color);
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* gallery (остальные стили) */
+
+.gallery__box-img {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 49px;
+  align-items: flex-end;
+}
+
+.gallery__img {
+  max-height: 350px;
+}
+
+
+/* catalog */
+
+.catalog {
+  margin-bottom: 78px;
+}
+
+.catalog__title {
+  font-size: var(--title-size-h3);
+  font-weight: 400;
+  color: var(--text-and-title-color);
+  margin-bottom: 20px;
+}
+
+.catalog__descr {
+  letter-spacing: 0.02px;
+  font-weight: 400;
+  width: 68%;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--text-and-title-color);
+  margin-bottom: 39px;
+}
+
+.card__image-media {
+  min-width: 47%;
+}
+
+.card {
+  display: var(--flex);
+  flex-direction: var(--row);
+  margin-bottom: 47px;
+}
+
+.card:last-child {
+  margin-bottom: 0;
+}
+
+.card__image {
+  width: 100%;
+}
+
+.box-with-card-descr {
+  display: var(--flex);
+  flex-direction: var(--column);
+  padding-left: 51px;
+  padding-top: 122px;
+}
+
+.card__title {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--text-and-title-color);
+  margin-bottom: 12px;
+}
+
+.card__small-text {
+  color: var(--small-text-color);
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.card__description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+/* events */
+
+.events {
+  margin-bottom: 80px;
+}
+
+.events__title {
+  font-size: var(--title-size-h3);
+  font-weight: 400;
+  line-height: 65px;
+  margin-bottom: 15px;
+}
+
+.article {
+  display: var(--flex);
+  flex-direction: var(--row);
+}
+
+.article__item {
+  display: var(--flex);
+  flex-direction: var(--column);
+  width: 31%;
+  margin-right: 50px;
+  border: 1px var(--small-text-color) solid;
+  min-height: 698px;
+}
+
+.article__cards {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.article__item:last-child {
+  margin-right: 0;
+}
+
+.article__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 13px 50px 41px 49px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 13px;
+}
+
+.location {
+  color: var(--small-text-color);
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  margin-bottom: 3px;
+}
+
+.date {
+  color: var(--small-text-color);
+  font-size: 12px;
+  letter-spacing: 0.2px;
+}
+
+.article__title {
+  color: var(--text-and-title-color);
+  font-size: 24px;
+  line-height: 33px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.article__descr {
+  color: var(--text-and-title-color);
+  font-size: 16px;
+  line-height: 32px;
+  margin-bottom: auto;
+}
+
+.article__link {
+  display: inline-block;
+  color: var(--static-and-hover-color);
+  outline: none;
+}
+
+.article__link::after {
+  content: '';
+  display: block;
+  max-width: 282px;
+  height: 1px;
+  background-color: var(--static-and-hover-color);
+  margin-top: 3px;
+}
+
+/* состояние для ссылки */
+
+
+.article__link:focus::after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  box-sizing: border-box;
+  pointer-events: none;
+  background-color: white;
+}
+
+.article__link:focus {
+  padding: 8px;
+  color: var(--bg-color);
+  background-color: var(--static-and-hover-color);
+}
+
+.article__link:active::after {
+  background-color: #000;
+}
+
+.article__link:active {
+  color: black;
+}
+
+/* project */
+
+.projects {
+  margin-bottom: 77px;
+}
+
+.projects__title {
+  color: var(--text-and-title-color);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 65px;
+  margin-bottom: 18px;
+}
+
+.projects__descr {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--text-and-title-color);
+  width: 67%;
+  margin-bottom: 33px;
+}
+
+.projects__partners-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.partners {
+  display: flex;
+}
+
+.partners__item {
+  margin-right: 34px;
+}
+
+/* contacts */
+
+.contacts {
+  border-top: 1px var(--small-text-color) solid;
+  padding-top: 36px;
+  margin-bottom: 36px;
+}
+
+.contacts__title-hidden {
+  position: absolute;
+  visibility: hidden;
+  left: -271px;
+}
+
+.contacts__content {
+  display: var(--flex);
+  justify-content: space-between;
+}
+
+.address {
+  display: var(--flex);
+  flex-direction: var(--column);
+}
+
+.address__text-bold {
+  padding-top: 10px;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.contacts__form {
+  display: flex;
+  width: 60%;
+}
+
+.form {
+  padding-left: 26px;
+  flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+}
+
+.form__name {
+  margin-right: 21px;
+  margin-bottom: 5px;
+}
+
+.form__tel {
+  margin-right: 19px;
+  margin-bottom: 5px;
+}
+
+.name {
+  padding-left: 23px;
+  border-radius: 40px;
+  border: 1px solid var(--form-and-svg-color);
+  min-height: 50px;
+  min-width: 270px;
+  outline: none;
+  transition: background-color 0.3ms ease;
+}
+
+.tel {
+  padding-left: 23px;
+  border-radius: 40px;
+  border: 1px solid var(--form-and-svg-color);
+  min-height: 50px;
+  min-width: 270px;
+  outline: none;
+  transition: background-color 0.3ms ease;
+}
+
+/* состояние для импута */
+
+.name:focus {
+  background-color: var(--small-text-color);
+  outline: none;
+}
+
+.tel:focus {
+  background-color: var(--small-text-color);
+  outline: none;
+}
+
+/* ------------ */
+
+.text-bold {
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--text-and-title-color);
+}
+
+.form__submit-btn {
+  border: 2px solid var(--static-and-hover-color);
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 18px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-right: 36px;
+  padding-left: 33px;
+  color: var(--static-and-hover-color);
+}
+
+.hidden-on-small-screens {
+  display: inline-block;
+}
+
+.visible-on-small-screens {
+  display: none;
+}
+
+/* стили для кнопки сабмита */
+
+.form__submit-btn:focus {
+  outline-offset: 3px;
+  outline: 2px solid var(--border-color);
+  color: var(--base-color);
+  background-color: var(--active-color);
+}
+
+.form__submit-btn:active {
+  border: 3px solid var(--border-color);
+  background-color: var(--active-color);
+  color: var(--base-color);
+}
+
+.social-links {
+  padding-top: 2px
+}
+
+.links {
+  display: flex;
+  padding-top: 8px;
+}
+
+.whatsapp {
+  display: inline-block;
+  margin-right: 20px;
+  outline: none;
+}
+
+.telegram {
+  display: inline-block;
+  outline: none;
+}
+
+/* состояния для иконки whatapp и telegram */
+
+.whatsapp path:focus {
+  opacity: 0.4;
+}
+
+.whatsapp .whatsapp__icon:active {
+  opacity: 1;
+  stroke: var(--static-and-hover-color);
+}
+
+.telegram path:focus {
+  opacity: 0.4;
+}
+
+.telegram .telegram__icon:active {
+  opacity: 1;
+  stroke: var(--static-and-hover-color);
+}
+
+/* footer */
+
+.footer {
+  padding-top: 39px;
+  background-color: var(--header-and-footer-color);
+  padding-bottom: 46px;
+}
+
+.footer__links {
+  display: flex;
+  padding-top: 9px;
+}
+
+.footer__item {
+  padding-left: 20px;
+}
+
+.footer__logo {
+  height: 40px;
+  padding-top: 11px;
+}
+
+.footer__content {
+  display: var(--flex);
+  justify-content: space-between;
+}
+
+.ok {
+  outline: none;
+}
+
+.vk {
+  outline: none;
+}
+
+.vk .vk__svg:focus {
+  fill: var(--bg-color);
+}
+
+.vk .vk__svg:active {
+  fill: var(--static-and-hover-color);
+}
+
+.ok .ok__svg:focus {
+  fill: var(--bg-color);
+}
+
+.ok .ok__svg:active {
+  fill: var(--static-and-hover-color);
+}
